@@ -1,5 +1,5 @@
 build:
   docker:
-    m03-example: Dockerfile
+    web: Dockerfile
 run:
-  m03-example: yarn start
+  web: yarn start
