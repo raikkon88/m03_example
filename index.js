@@ -2,7 +2,9 @@ const express = require("express");
 const logger = require("./log/logger.log");
 const { getConnection, disconnectDB } = require("./dbConnection");
 const app = express();
-const port = 3000;
+const dotenv = require("dotenv");
+dotenv.config();
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
