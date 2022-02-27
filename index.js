@@ -11,7 +11,7 @@ app.use(express.json());
 const User = require("./model/user.model");
 
 app.get("/", async (req, res) => {
-  const dbRes = await User.find({});
+  //const dbRes = await User.find({});
 
   return res.send("Hello World!");
 });
