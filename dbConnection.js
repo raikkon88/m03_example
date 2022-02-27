@@ -5,8 +5,6 @@ require("dotenv").config();
 let mongoConnection = null;
 
 const connectDB = async () => {
-  console.log(process.env.NODE_ENV);
-
   const mongodbProtocol = process.env.MONGODB_PROTOCOL;
   const username = process.env.MONGODB_USER;
   const password = process.env.MONGODB_PASSWORD;
