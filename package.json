@@ -5,7 +5,9 @@
   "author": "Marc Sànchez <msanxes@institutmontilivi.cat>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "docker-build": "docker build . -t m03-example:latest",
+    "docker-run": "docker container rm -f m03-example; docker run -p 3000:3000 -e MONGODB_USER=m03 -e MONGODB_PASSWORD=m03 -e MONGODB_HOST=172.17.0.3 -e MONGODB_PORT=27017 -e MONGODB_DATABASE=m03 m03-example"
   },
   "dependencies": {
     "dotenv": "^15.0.0",

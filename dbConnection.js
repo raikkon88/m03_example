@@ -5,13 +5,15 @@ require("dotenv").config();
 let mongoConnection = null;
 
 const connectDB = async () => {
+  console.log(process.env.NODE_ENV);
+
+  const mongodbProtocol = process.env.MONGODB_PROTOCOL;
   const username = process.env.MONGODB_USER;
   const password = process.env.MONGODB_PASSWORD;
   const host = process.env.MONGODB_HOST;
-  const port = process.env.MONGODB_PORT;
   const database = process.env.MONGODB_DATABASE;
 
-  const connectionString = `mongodb://${username}:${password}@${host}:${port}/${database}`;
+  const connectionString = `${mongodbProtocol}://${username}:${password}@${host}/${database}?retryWrites=true&w=majority`;
   return await mongoose.connect(connectionString);
 };
 
